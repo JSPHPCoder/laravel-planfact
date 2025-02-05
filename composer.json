@@ -2,6 +2,7 @@
     "name": "jsphpcoder/laravel-planfact",
     "description": "Сервис для работы с API planfact.io",
     "type": "library",
+    "license": "MIT",
     "require": {
         "php": ">=8.0",
         "illuminate/support": "^9.0 || ^10.0"
