@@ -19,7 +19,7 @@ composer require jsphpcoder/laravel-planfact
 1. Опубликуйте конфигурацию:
 
    ```sh
-   php artisan vendor:publish --tag=planfact-config
+   php artisan vendor:publish --provider="JSPHPCoder\LaravelPlanfact\Providers\PlanfactServiceProvider"
    ```
 
 2. В файле `.env` укажите API-ключ:
