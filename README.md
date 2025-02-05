@@ -30,7 +30,7 @@ composer require jsphpcoder/laravel-planfact
 
 ## 📖 Документация
 
-Полная документация доступна на [Planfact API](https://api.planfact.io/docs).
+Полная документация доступна на [Planfact API](https://apidoc.planfact.io/).
 
 ## 🤝 Поддержка
 
