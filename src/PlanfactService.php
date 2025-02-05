@@ -22,11 +22,12 @@ class PlanfactService
      * @return array
      * @throws GuzzleException
      */
-    public static function post(string $url, array $data, array $headers = [
-        'Accept' => 'application/json',
-        'X-ApiKey' => config('planfact.api_key')
-    ]): array
+    public static function post(string $url, array $data = [], array $headers = []): array
     {
+        $headers = array_merge($headers, [
+            'Accept' => 'application/json',
+            'X-ApiKey' => config('planfact.api_key')
+        ]);
         $response = static::send('POST', $url, [
             'headers' => $headers,
             'json' => $data
@@ -43,11 +44,12 @@ class PlanfactService
      * @return array
      * @throws GuzzleException
      */
-    public static function get(string $url, array $data, array $headers = [
-        'Accept' => 'application/json',
-        'X-ApiKey' => config('planfact.api_key')
-    ]): array
+    public static function get(string $url, array $data = [], array $headers = []): array
     {
+        $headers = array_merge($headers, [
+            'Accept' => 'application/json',
+            'X-ApiKey' => config('planfact.api_key')
+        ]);
         $response = static::send('GET', $url, [
             'headers' => $headers,
             'query' => $data
@@ -65,12 +67,14 @@ class PlanfactService
      * @return array
      * @throws GuzzleException
      */
-    public static function delete(string $url, array $data): array
+    public static function delete(string $url, array $data, array $headers = []): array
     {
+        $headers = array_merge($headers, [
+            'Accept' => 'application/json',
+            'X-ApiKey' => config('planfact.api_key')
+        ]);
         $response = static::send('DELETE', $url, [
-            'headers' => [
-                'X-ApiKey' => config('planfact.api_key')
-            ],
+            'headers' => $headers,
             'json' => $data
         ]);
         if (isset($response['data'])) {
